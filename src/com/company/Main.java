@@ -7,19 +7,18 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("\t \t Customer Record");
 
-        System.out.println("Enter customer name: ");
+        System.out.print("Enter customer name: ");
         String customerName = input.nextLine();
 
-        System.out.println("Enter purchase amount: $ ");
+        System.out.print("Enter purchase amount: $");
         double price = Double.parseDouble(input.nextLine());
 
 
 
-        System.out.println("Enter tax code: ");
+        System.out.print("Enter tax code: ");
         int taxCode = Integer.parseInt(input.nextLine());
-        int tax = 0;
-        double salesTax;
-        double total = 0.0;
+
+        double tax =0;
         switch (taxCode) {
             case 0 : tax = 0;
                    break;
@@ -37,13 +36,13 @@ public class Main {
 
        //Compute tax
         tax /= 100;
-        salesTax = price * tax;
-        total += salesTax;
+        double salesTax = price * tax;
+        double total = salesTax + price;
 
         System.out.println("Customer's  name: "+ customerName);
-        System.out.println("Purchase amount: "+ price);
-        System.out.println("Sales tax: "+ tax+ "%");
-        System.out.println("Total amount: "+ total);
+        System.out.println("Purchase amount: $"+ price);
+        System.out.println("Sales tax: $"+ salesTax+ "");
+        System.out.println("Total amount: $"+ total);
 
     }
 }
